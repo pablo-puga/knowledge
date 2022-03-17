@@ -1,6 +1,7 @@
 ---
 title: Understanding how Bubble Sort algorithm works
 date: 2022-03-17T11:00
+tags: algorithm
 ---
 # Understanding how Bubble Sort algorithm works
 

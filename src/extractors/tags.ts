@@ -1,0 +1,13 @@
+import { getPostsFromFileSystem } from './posts';
+
+export const getTagsFromFileSystem = async () => {
+    const posts = await getPostsFromFileSystem();
+    const tags: Record<string, number> = {};
+    posts.forEach((post) =>
+        post.tags?.forEach((tag) => {
+            if (tags.hasOwnProperty(tag)) ++tags[tag];
+            else tags[tag] = 1;
+        }),
+    );
+    return tags;
+};
