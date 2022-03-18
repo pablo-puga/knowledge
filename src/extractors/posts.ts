@@ -1,18 +1,18 @@
 import { lstat, readdir, readFile } from 'fs/promises';
 import { join as pathJoin } from 'path';
 import matter from 'gray-matter';
-import { toDate } from 'date-fns-tz';
 import type { Post } from '../types';
 import { getCategoriesFromFileSystem } from './categories';
 
+const KNOWLEDGE_DIRECTORY = pathJoin(process.cwd(), 'knowledge');
+
 export const getPostsFromFileSystem = async () => {
-    const knowledgeDirectory = pathJoin(__dirname, '../../knowledge');
     const categories = await getCategoriesFromFileSystem();
 
     const posts: Post[] = [];
 
     for (const category of categories) {
-        const categoryDirectory = pathJoin(knowledgeDirectory, category);
+        const categoryDirectory = pathJoin(KNOWLEDGE_DIRECTORY, category);
         const directoryItems = await readdir(categoryDirectory);
 
         for (const directoryItem of directoryItems) {
@@ -29,10 +29,9 @@ export const getPostsFromFileSystem = async () => {
             const matterResult = matter(fileContent);
             posts.push({
                 id: slugSearch.groups.slug,
+                category,
                 title: matterResult.data.title,
-                date: toDate(matterResult.data.date, {
-                    timeZone: 'Europe/Madrid',
-                }),
+                date: matterResult.data.date,
                 content: matterResult.content,
                 tags: matterResult.data.tags
                     .split(',')
@@ -43,4 +42,25 @@ export const getPostsFromFileSystem = async () => {
     }
 
     return posts;
+};
+
+export const getSinglePostFromFilesystem = async (
+    category: string,
+    id: string,
+) => {
+    const postPath = pathJoin(KNOWLEDGE_DIRECTORY, category, `${id}.md`);
+    const fileContent = await readFile(postPath, 'utf-8');
+    const matterResult = matter(fileContent);
+
+    return {
+        id,
+        category,
+        title: matterResult.data.title,
+        date: matterResult.data.date,
+        content: matterResult.content,
+        tags: matterResult.data.tags
+            .split(',')
+            .map((tag: string) => tag.trim().toLowerCase())
+            .filter((tag: string) => tag !== ''),
+    };
 };

@@ -1,7 +1,8 @@
 export interface Post {
     id: string;
+    category: string;
     title: string;
-    date: Date;
+    date: string;
     tags?: string[];
     content: string;
 }

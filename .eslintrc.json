@@ -25,13 +25,9 @@
         "skipBlankLines": true
       }
     ],
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
-      {
-        "prefer": "type-imports"
-      }
-    ],
+    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "import/no-anonymous-default-export": "off"
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

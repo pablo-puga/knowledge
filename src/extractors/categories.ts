@@ -2,7 +2,7 @@ import { readdir, lstat } from 'fs/promises';
 import { join as pathJoin } from 'path';
 
 export const getCategoriesFromFileSystem = async () => {
-    const knowledgeDirectory = pathJoin(__dirname, '../../knowledge');
+    const knowledgeDirectory = pathJoin(process.cwd(), 'knowledge');
     const directoryItems = await readdir(knowledgeDirectory);
     const categories = [];
     for (const item of directoryItems) {
