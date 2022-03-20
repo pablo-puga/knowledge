@@ -1,7 +1,7 @@
 import { lstat, readdir, readFile } from 'fs/promises';
 import { join as pathJoin } from 'path';
 import matter from 'gray-matter';
-import type { Post } from '../types';
+import type { Post } from '../../types';
 import { getCategoriesFromFileSystem } from './categories';
 
 const KNOWLEDGE_DIRECTORY = pathJoin(process.cwd(), 'knowledge');

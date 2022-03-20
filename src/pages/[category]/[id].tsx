@@ -5,13 +5,12 @@ import type {
 } from 'next';
 import Head from 'next/head';
 import type { ParsedUrlQuery } from 'querystring';
+import { formatDateStringWithTimezone } from '../../lib/date';
 import {
     getPostsFromFileSystem,
     getSinglePostFromFilesystem,
-} from '../../extractors/posts';
+} from '../../lib/extractors/posts';
 import type { Post } from '../../types';
-import formatDate from 'date-fns/format';
-import { toDate } from 'date-fns-tz';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPostsFromFileSystem();
@@ -42,13 +41,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
             post,
         },
     };
-};
-
-const formatDateStringWithTimezone = (datestr: string) => {
-    const date = toDate(datestr, {
-        timeZone: 'Europe/Madrid',
-    });
-    return formatDate(date, 'dd MMMM yyyy hh:mm aaa');
 };
 
 const PostPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {

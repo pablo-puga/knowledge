@@ -2,7 +2,7 @@ import { rm, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { join as pathJoin } from 'path';
 
-import { getTagsFromFileSystem } from '../src/extractors/tags';
+import { getTagsFromFileSystem } from '../src/lib/extractors/tags';
 
 const METADATA_DIR = pathJoin(__dirname, '../metadata');
 const TAGS_FILE = pathJoin(METADATA_DIR, 'tags.json');
