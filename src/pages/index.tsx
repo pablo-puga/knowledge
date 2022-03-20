@@ -70,7 +70,7 @@ const HomePage = ({
         <CategoriesContext.Provider value={categories}>
             <TagsContext.Provider value={tags}>
                 <ul
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-4 p-4 auto-rows-fr mx-auto"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-4 p-4 sm:auto-rows-fr mx-auto"
                     style={{ maxWidth: '1536px' }}
                 >
                     {posts.map((post) => {

@@ -10,7 +10,7 @@ const Tag = ({ children }: { children: string }) => {
         <span
             className={clsx(
                 'px-1.5 py-0.5 rounded-sm bg-gray-300',
-                color && !colorIsLight(color) && 'text-gray-200',
+                color && !colorIsLight(color) && 'text-white',
             )}
             style={{ backgroundColor: color }}
         >

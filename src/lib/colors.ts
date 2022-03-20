@@ -2,7 +2,7 @@ import tinycolor from 'tinycolor2';
 import { KnowledgeError } from './error';
 
 export const generateRandonColorHexCode = () => {
-    return tinycolor.random().toHexString();
+    return tinycolor.random().brighten().toHexString();
 };
 
 export const generateRandonDarkColorHexCode = () => {
