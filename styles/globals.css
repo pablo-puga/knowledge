@@ -1,80 +1,178 @@
 /**********************************
  *          ROBOTO FAMILY         *
  **********************************/
- @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Thin.ttf');
-  font-weight: 100;
-  font-style: normal;
+@font-face {
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-ThinItalic.ttf');
-  font-weight: 100;
-  font-style: italic;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-ThinItalic.ttf');
+    font-weight: 100;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Light.ttf');
-  font-weight: 300;
-  font-style: normal;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-LightItalic.ttf');
-  font-weight: 300;
-  font-style: italic;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Regular.ttf');
-  font-weight: 400;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Regular.ttf');
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Medium.ttf');
-  font-weight: 500;
-  font-style: normal;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-MediumItalic.ttf');
-  font-weight: 500;
-  font-style: italic;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-BoldItalic.ttf');
-  font-weight: 700;
-  font-style: italic;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-Black.ttf');
-  font-weight: 900;
-  font-style: normal;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url('/fonts/Roboto/Roboto-BlackItalic.ttf');
-  font-weight: 900;
-  font-style: italic;
+    font-family: Roboto;
+    src: url('/fonts/Roboto/Roboto-BlackItalic.ttf');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-ThinItalic.ttf');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-ExtraLightItalic.ttf');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-RegularItalic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-SemiBoldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url('/fonts/RobotoMono/RobotoMono-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
 }
 
 @tailwind base;
@@ -82,9 +180,16 @@
 @tailwind utilities;
 
 html {
-  @apply font-roboto bg-gray-100 text-gray-900;
+    @apply font-roboto bg-gray-100 text-gray-900;
+}
+
+code,
+kbd,
+samp,
+pre {
+    @apply font-robotomono text-sm;
 }
 
 * {
-  @apply outline-none;
+    @apply outline-none;
 }

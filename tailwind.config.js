@@ -13,6 +13,17 @@ module.exports = {
             },
             fontFamily: {
                 roboto: ['Roboto', 'Arial', 'Noto Sans', 'sans-serif'],
+                robotomono: [
+                    'RobotoMono',
+                    'ui-monospace',
+                    'SFMono-Regular',
+                    'Menlo',
+                    'Monaco',
+                    'Consolas',
+                    'Liberation Mono',
+                    'Courier New',
+                    'monospace',
+                ],
             },
         },
     },

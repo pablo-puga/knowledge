@@ -1,11 +1,13 @@
 import clsx from 'clsx';
-import { useContext } from 'react';
 import { colorIsLight } from '../../lib/colors';
-import { TagsContext } from '../../pages';
 
-const Tag = ({ children }: { children: string }) => {
-    const tagsContext = useContext(TagsContext);
-    const color = tagsContext?.[children].color;
+const Tag = ({
+    children,
+    color = undefined,
+}: {
+    children: string;
+    color?: string;
+}) => {
     return (
         <span
             className={clsx(

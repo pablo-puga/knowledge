@@ -3,6 +3,8 @@ import { formatDateStringWithTimezone } from '../../lib/date';
 import { FaRegClock } from 'react-icons/fa';
 import Category from './Category';
 import Tag from '../Tag';
+import { useContext } from 'react';
+import { TagsContext } from '../../pages';
 
 interface PostCardProps {
     title: string;
@@ -13,6 +15,10 @@ interface PostCardProps {
 }
 
 const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
+    const tagsContext = useContext(TagsContext);
+
+    const getColorForTag = (tagName: string) => tagsContext?.[tagName].color;
+
     return (
         <article
             className="border rounded-sm shadow-sm h-full py-2 px-3 bg-white text-gray-900 grid"
@@ -28,7 +34,7 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
                 <ul className="mt-1 flex flex-row gap-2 text-sm font-medium row-span-1">
                     {tags.map((tagName) => (
                         <li key={tagName}>
-                            <Tag>{tagName}</Tag>
+                            <Tag color={getColorForTag(tagName)}>{tagName}</Tag>
                         </li>
                     ))}
                 </ul>
