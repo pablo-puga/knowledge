@@ -1,15 +1,16 @@
 import { lstat, readdir, readFile } from 'fs/promises';
 import { join as pathJoin } from 'path';
 import matter from 'gray-matter';
-import type { Post } from '../../types';
+import type { IPost } from '../../types';
 import { getCategoriesFromFileSystem } from './categories';
+import { compareDateStr } from '../date';
 
 const KNOWLEDGE_DIRECTORY = pathJoin(process.cwd(), 'knowledge');
 
-export const getPostsFromFileSystem = async () => {
+export const getPostsFromFileSystem = async (): Promise<IPost[]> => {
     const categories = await getCategoriesFromFileSystem();
 
-    const posts: Post[] = [];
+    const posts: IPost[] = [];
 
     for (const category of categories) {
         const categoryDirectory = pathJoin(KNOWLEDGE_DIRECTORY, category);
@@ -41,13 +42,14 @@ export const getPostsFromFileSystem = async () => {
         }
     }
 
+    posts.sort((a, b) => compareDateStr(a.date, b.date, 'desc'));
     return posts;
 };
 
 export const getSinglePostFromFilesystem = async (
     category: string,
     id: string,
-) => {
+): Promise<IPost> => {
     const postPath = pathJoin(KNOWLEDGE_DIRECTORY, category, `${id}.md`);
     const fileContent = await readFile(postPath, 'utf-8');
     const matterResult = matter(fileContent);

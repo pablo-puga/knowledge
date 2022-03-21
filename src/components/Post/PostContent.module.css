@@ -22,8 +22,48 @@
     h6 {
         @apply text-xs mt-2 mb-1;
     }
+
     p {
-        @apply mb-2;
+        @apply mt-2 mb-3;
         overflow-wrap: break-word;
+    }
+
+    code {
+        @apply bg-secondary px-1 rounded-sm;
+    }
+
+    pre {
+        @apply mt-5 mb-5;
+
+        code {
+            @apply px-0;
+        }
+    }
+
+    table {
+        @apply border-2 border-gray-200 border-collapse mt-5 mb-2;
+
+        tr,
+        th,
+        td {
+            @apply border border-gray-200 border-collapse;
+        }
+
+        th,
+        td {
+            @apply px-2 py-1;
+        }
+    }
+
+    ol {
+        @apply list-decimal pl-5 mt-2 mb-1;
+    }
+
+    blockquote {
+        @apply border-l-4 border-l-primary pl-3 py-1 bg-gray-200 rounded-sm mt-2;
+    }
+
+    a {
+        @apply text-primary hover:text-quinary transition-colors duration-150 font-medium underline;
     }
 }

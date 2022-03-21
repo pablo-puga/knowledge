@@ -14,8 +14,8 @@ const Post = ({ post }: { post: IPost }) => {
     const getColorForTag = (tagName: string) => tagsContext?.[tagName].color;
 
     return (
-        <article className="mx-auto mt-10 px-4" style={{ maxWidth: '1024px' }}>
-            <h1 className="text-4xl font-medium drop-shadow text-primary shadow-primary">
+        <article className="mx-auto mb-10 px-4" style={{ maxWidth: '1024px' }}>
+            <h1 className="text-4xl font-medium drop-shadow-sm text-primary shadow-primary">
                 {post.title}
             </h1>
             <section>

@@ -1,4 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import { createContext } from 'react';
 import PostCard from '../components/PostCard';
 import {
@@ -67,23 +68,28 @@ const HomePage = ({
     tags,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <CategoriesContext.Provider value={categories}>
-            <TagsContext.Provider value={tags}>
-                <ul
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-4 p-4 sm:auto-rows-fr mx-auto"
-                    style={{ maxWidth: '1536px' }}
-                >
-                    {posts.map((post) => {
-                        const slug = `${post.category}/${post.id}`;
-                        return (
-                            <li key={slug}>
-                                <PostCard {...post} slug={slug} />
-                            </li>
-                        );
-                    })}
-                </ul>
-            </TagsContext.Provider>
-        </CategoriesContext.Provider>
+        <>
+            <Head>
+                <title>Pablo&apos;s Knowledge</title>
+            </Head>
+            <CategoriesContext.Provider value={categories}>
+                <TagsContext.Provider value={tags}>
+                    <ul
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-4 p-4 sm:auto-rows-fr mx-auto"
+                        style={{ maxWidth: '1536px' }}
+                    >
+                        {posts.map((post) => {
+                            const slug = `${post.category}/${post.id}`;
+                            return (
+                                <li key={slug}>
+                                    <PostCard {...post} slug={slug} />
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </TagsContext.Provider>
+            </CategoriesContext.Provider>
+        </>
     );
 };
 

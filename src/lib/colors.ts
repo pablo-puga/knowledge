@@ -2,7 +2,13 @@ import tinycolor from 'tinycolor2';
 import { KnowledgeError } from './error';
 
 export const generateRandonColorHexCode = () => {
-    return tinycolor.random().brighten().toHexString();
+    const color = tinycolor.random().brighten(10).lighten(10);
+
+    if (tinycolor.readability(color, '#ffffff') === 1) {
+        color.darken(15);
+    }
+
+    return color.toHexString();
 };
 
 export const generateRandonDarkColorHexCode = () => {
