@@ -12,7 +12,7 @@ const Navbar = ({
 }) => {
     return (
         <nav
-            className="fixed top-0 left-0 w-full bg-primary shadow-sm shadow-primary flex flex-row items-center justify-between pl-3 pr-1.5"
+            className="fixed top-0 left-0 w-full bg-primary shadow-sm shadow-primary flex flex-row items-center justify-between pl-3 pr-1.5 z-40"
             style={{ ...style, height: `${height}px` }}
         >
             <div className="flex flex-row items-center">
