@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
-import { FaSearch } from 'react-icons/fa';
+// import { FaSearch } from 'react-icons/fa';
 
 const Navbar = ({
     style = undefined,
@@ -30,14 +30,14 @@ const Navbar = ({
                     Pablo&apos;s Knowledge
                 </h1>
             </div>
-            <div className="flex flex-row flex-nowrap items-center bg-gray-200 px-2 py-0.5 rounded-sm">
+            {/* <div className="flex flex-row flex-nowrap items-center bg-gray-200 px-2 py-0.5 rounded-sm">
                 <FaSearch className="text-gray-400" />
                 <input
                     type="search"
                     placeholder="Search..."
                     className="bg-transparent px-2"
                 />
-            </div>
+            </div> */}
         </nav>
     );
 };
