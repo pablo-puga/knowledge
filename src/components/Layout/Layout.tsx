@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 const NAVBAR_HEIGHT = 40;
@@ -12,6 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 style={{ marginTop: `${NAVBAR_HEIGHT}px`, maxWidth: '1536px' }}
             >
                 {children}
+                <Footer />
             </main>
         </>
     );
