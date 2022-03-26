@@ -2,6 +2,16 @@
   "name": "knowledge",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Pablo Puga",
+    "url": "https://pablopugaperalta.com"
+  },
+  "homepage": "https://knowledge.pablopugaperalta.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablo-puga/knowledge"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
