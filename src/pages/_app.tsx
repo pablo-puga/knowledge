@@ -2,10 +2,11 @@ import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import Layout from '../components/Layout';
-import { COOKIE_CONSENT_MAXAGE, useCookieConsent } from '../lib/hooks';
+import useCookieConsent, {
+    COOKIE_CONSENT_MAXAGE,
+    GA_ID,
+} from '../lib/use-cookie-consent';
 import CookieConsent from '../components/CookieConsent';
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const KnowledgeApp = ({ Component, pageProps }: AppProps) => {
     const cookieConsent = useCookieConsent();
