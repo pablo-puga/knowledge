@@ -15,7 +15,7 @@ const Footer = () => {
                 </a>
             </p>
             <p className="mt-1">
-                Version {version} Made by{' '}
+                Version {version} made by{' '}
                 <a
                     href="https://github.com/pablo-puga"
                     className="hover:text-primary underline transition-colors duration-150"

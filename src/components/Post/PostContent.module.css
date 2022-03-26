@@ -59,11 +59,24 @@
         @apply list-decimal pl-5 mt-2 mb-1;
     }
 
+    ul {
+        @apply list-disc pl-5 mt-2 mb-1;
+    }
+
     blockquote {
         @apply border-l-4 border-l-primary pl-3 py-1 bg-gray-200 rounded-sm mt-2;
     }
 
     a {
         @apply text-primary hover:text-quinary transition-colors duration-150 font-medium underline;
+    }
+
+    .header {
+        @apply flex flex-row flex-nowrap items-center;
+    }
+
+    a.header-link {
+        @apply text-gray-300 ml-2 hover:text-primary;
+        font-size: 0.65em;
     }
 }

@@ -20,8 +20,8 @@ const Post = ({ post }: { post: IPost }) => {
             </h1>
             <section>
                 <p className="mt-3 flex flex-row flex-nowrap items-center">
-                    <IoFileTrayStackedSharp className="text-gray-300" />{' '}
-                    <span className="capitalize ml-2 text-sm font-medium">
+                    <IoFileTrayStackedSharp className="text-gray-300 inline-block" />{' '}
+                    <span className="capitalize ml-2 text-sm font-medium text-gray-700">
                         {post.category}
                     </span>
                 </p>
@@ -41,7 +41,7 @@ const Post = ({ post }: { post: IPost }) => {
                 )}
                 <small className="mt-3 flex flex-row flex-nowrap items-center">
                     <FaRegClock className="ml-0.5 text-gray-300" />{' '}
-                    <time className="ml-2 text-sm">
+                    <time className="ml-2 text-sm text-gray-700">
                         {formatDateStringWithTimezone(post.date)}
                     </time>
                 </small>
