@@ -2,6 +2,7 @@
 title: Comparing Floating Numbers in C++
 date: 2022-03-21T14:35
 tags: programming,cpp
+description: Notes and examples on how to properly compare floating point numbers in C++ programs.
 ---
 
 # How to properly compare floating point numbers in C++

@@ -2,6 +2,7 @@
 title: Understanding how Bubble Sort algorithm works
 date: 2022-03-17T11:00
 tags: algorithm
+descriptions: Quick note and example on how Bubble Sort algorithm works.
 ---
 # Understanding how Bubble Sort algorithm works
 

@@ -2,6 +2,7 @@
 title: C++ Escape Sequences
 date: 2022-03-21T14:25
 tags: programming,cpp
+description: Table of C++ string escape sequences.
 ---
 
 # List of C++ Escape Sequences for strings

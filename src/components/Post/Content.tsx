@@ -20,7 +20,7 @@ const getCustomHeader = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
         const slug = title
             ?.toString()
             .toLowerCase()
-            .replace(/[()]/g, '')
+            .replace(/[()\/]/g, '')
             .replace(/\s/g, '-');
         return (
             <TagName className={clsx(className, style.header)} id={slug}>

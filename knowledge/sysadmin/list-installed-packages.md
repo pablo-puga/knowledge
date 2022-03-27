@@ -2,6 +2,7 @@
 title: How to list installed packages in Linux
 tags: linux,apt,yum
 date: 2022-03-26T08:30
+description: How to list installed packages on Debian and CentOS systems through the package managers.
 ---
 
 # How to list installed packages in Linux

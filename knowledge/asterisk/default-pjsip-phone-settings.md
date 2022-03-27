@@ -2,6 +2,7 @@
 title: Default PJSIP Wizard defaults for a phone
 date: 2022-03-21T14:20
 tags: configuration
+description: PJSIP template for a good batch of defaults to configure a user SIP phone.
 ---
 
 # Default PJSIP Wizard defaults for a phone

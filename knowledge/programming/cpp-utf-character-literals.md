@@ -2,6 +2,7 @@
 title: UTF characters in C++
 date: 2022-03-21T15:10
 tags: programming,cpp
+description: Notes on UTF characters in C++ programs.
 ---
 
 # Using UTF characters in C++

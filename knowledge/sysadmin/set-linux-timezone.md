@@ -2,6 +2,7 @@
 title: Change Linux Timezone
 date: 2022-03-21T14:15
 tags: linux
+description: Instructions on how to change the TimeZone of a Linux system.
 ---
 
 # How to change Linux Timezone

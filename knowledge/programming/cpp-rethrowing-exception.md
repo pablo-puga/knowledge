@@ -2,6 +2,7 @@
 title: Rethrowing an exception in C++
 date: 2022-03-21T15:05
 tags: programming,cpp
+description: Notes and examples on how to properly rethrow exceptions in C++ programs.
 ---
 
 # Rethrowing an exception (the right way)

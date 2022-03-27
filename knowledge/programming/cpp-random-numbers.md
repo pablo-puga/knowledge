@@ -2,6 +2,7 @@
 title: Generating Randon Numbers in C++
 date: 2022-03-21T14:50
 tags: programming,cpp
+description: Notes and examples on how to properly generate random numbers in C++ programs.
 ---
 
 # Properly genearating random numbers in C++

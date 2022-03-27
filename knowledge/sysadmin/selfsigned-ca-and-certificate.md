@@ -2,6 +2,7 @@
 title: Creating a self-singed CA certificate and generating SSL certificates with it.
 date: 2022-03-17T10:50
 tags: certificates,ssl
+description: Instructions on how to generate a self-signed Certification Authority and using it to generate self-signed certificates.
 ---
 # Creating a self-singed CA certificate and generating SSL certificates with it.
 ### 1. Generate a singing key for our Certification Authority

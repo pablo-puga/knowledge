@@ -2,6 +2,7 @@
 title: Change Linux Hostname
 date: 2022-03-21T14:00
 tags: linux
+description: Instructions on how to change the hostname of a Linux system.
 ---
 
 # How to change Linux Hostname

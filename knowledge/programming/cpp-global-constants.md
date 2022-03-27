@@ -2,6 +2,7 @@
 title: Global Constants in C++
 date: 2022-03-21T14:40
 tags: programming,cpp
+description: Notes and examples on how to properly implement global constants in C++ programs.
 ---
 
 # Declaring Global Constants in C++

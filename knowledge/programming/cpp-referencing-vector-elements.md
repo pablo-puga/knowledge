@@ -2,6 +2,7 @@
 title: Referencing std::vector elements in C++
 date: 2022-03-21T15:00
 tags: programming,cpp
+description: Notes and examples on how to properly refererence elements of std::vectors in C++ programs.
 ---
 
 # Using std::reference_wrapper to reference elements in std::vector lists

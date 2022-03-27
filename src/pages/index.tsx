@@ -72,6 +72,10 @@ const HomePage = ({
         <>
             <Head>
                 <title>Pablo&apos;s Knowledge</title>
+                <meta
+                    name="description"
+                    content="This repository is a collection of commands, programming pieces or general concepts that I found myself Googling again and again"
+                />
             </Head>
             <Description />
             <CategoriesContext.Provider value={categories}>

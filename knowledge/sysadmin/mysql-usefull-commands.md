@@ -2,6 +2,7 @@
 title: Usefull MySQL administration commands
 date: 2022-03-21T16:00
 tags: mysql
+description: List of usefull MySQL commands to monitor the usage of the database server.
 ---
 
 # Usefull MySQL administration commands to check its status

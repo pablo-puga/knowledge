@@ -68,6 +68,10 @@ const PostPage = ({
         <>
             <Head>
                 <title>{post.title}</title>
+                <meta
+                    name="description"
+                    content={post.description || post.title}
+                />
             </Head>
 
             <TagsContext.Provider value={tags}>
