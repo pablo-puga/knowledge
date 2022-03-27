@@ -27,10 +27,11 @@ const getCustomHeader = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
                 {title}
                 <a
                     aria-hidden={true}
+                    tabIndex={-1}
                     href={`#${slug}`}
                     className={style['header-link']}
                 >
-                    <FaLink className="inline-block" />
+                    <FaLink className="inline-block" aria-hidden={true} />
                 </a>
             </TagName>
         );
