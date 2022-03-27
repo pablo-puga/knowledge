@@ -7,7 +7,12 @@ description: List of usefull MySQL commands to monitor the usage of the database
 
 # Usefull MySQL administration commands to check its status
 
-### Check logged users by host
+- [Usefull MySQL administration commands to check its status](#usefull-mysql-administration-commands-to-check-its-status)
+  - [Check logged users by host](#check-logged-users-by-host)
+  - [View InnoDB Status](#view-innodb-status)
+  - [List database processes](#list-database-processes)
+
+## Check logged users by host
 
 ```sql
 SELECT SUBSTRING_INDEX(host, ':', 1) AS host_short,
@@ -29,7 +34,7 @@ ORDER BY COUNT(*), host_short;
 1 row in set (0.06 sec)
 ```
 
-### View InnoDB Status
+## View InnoDB Status
 
 ```sql
 SHOW ENGINE INNODB STATUS\G
@@ -163,7 +168,7 @@ END OF INNODB MONITOR OUTPUT
 1 row in set (0.00 sec)
 ```
 
-### List database processes
+## List database processes
 
 ```sql
 SHOW FULL PROCESSLIST;
