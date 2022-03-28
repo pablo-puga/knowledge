@@ -32,7 +32,7 @@ export const getPostsFromFileSystem = async (): Promise<IPost[]> => {
                 id: slugSearch.groups.slug,
                 category,
                 title: matterResult.data.title,
-                description: matterResult.data?.description,
+                description: matterResult.data?.description || null,
                 date: matterResult.data.date,
                 content: matterResult.content,
                 tags: matterResult.data.tags
@@ -59,7 +59,7 @@ export const getSinglePostFromFilesystem = async (
         id,
         category,
         title: matterResult.data.title,
-        description: matterResult.data?.description,
+        description: matterResult.data?.description || null,
         date: matterResult.data.date,
         content: matterResult.content,
         tags: matterResult.data.tags
