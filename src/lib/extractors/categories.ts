@@ -1,4 +1,4 @@
-import { readdir, lstat } from 'fs/promises';
+import { lstat, readdir } from 'fs/promises';
 import { join as pathJoin } from 'path';
 
 export const getCategoriesFromFileSystem = async () => {
