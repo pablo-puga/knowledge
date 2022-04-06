@@ -40,3 +40,4 @@ yarn-error.log*
 # knowledge
 metadata/*
 !metadata/.gitkeep
+public/sitemap.xml
