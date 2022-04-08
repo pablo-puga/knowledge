@@ -34,6 +34,7 @@ export const getPostsFromFileSystem = async (): Promise<IPost[]> => {
                 title: matterResult.data.title,
                 description: matterResult.data?.description || null,
                 date: matterResult.data.date,
+                lastUpdated: matterResult.data?.lastUpdated || null,
                 content: matterResult.content,
                 tags: matterResult.data.tags
                     .split(',')
@@ -61,6 +62,7 @@ export const getSinglePostFromFilesystem = async (
         title: matterResult.data.title,
         description: matterResult.data?.description || null,
         date: matterResult.data.date,
+        lastUpdated: matterResult.data?.lastUpdated || null,
         content: matterResult.content,
         tags: matterResult.data.tags
             .split(',')

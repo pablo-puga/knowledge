@@ -22,9 +22,10 @@ const run = async () => {
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     ${posts
         .map((post) => {
+            const lastmod = post.lastUpdated || post.date;
             const postXML = `<url>
         <loc>${BASE_URL}/${post.category}/${post.id}</loc>
-        <lastmod>${formatW3CDateWithTimezone(post.date)}</lastmod>
+        <lastmod>${formatW3CDateWithTimezone(lastmod)}</lastmod>
     </url>`;
             return postXML.trim();
         })

@@ -4,6 +4,7 @@ export interface IPost {
     title: string;
     description?: string;
     date: string;
+    lastUpdated?: string;
     tags?: string[];
     content: string;
 }

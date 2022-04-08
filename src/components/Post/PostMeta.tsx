@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AiFillTags } from 'react-icons/ai';
 import { FaRegClock } from 'react-icons/fa';
 import { IoFileTrayStackedSharp } from 'react-icons/io5';
+import { MdUpdate } from 'react-icons/md';
 import { formatDateStringWithTimezone } from '../../lib/date';
 import { TagsContext } from '../../pages/[category]/[id]';
 import type { IPost } from '../../types';
@@ -77,6 +78,19 @@ const PostMeta = ({ post }: { post: IPost }) => {
                         <time>{formatDateStringWithTimezone(post.date)}</time>
                     </MetaValueCell>
                 </tr>
+                {post.lastUpdated && (
+                    <tr>
+                        <IconCell>
+                            <MdUpdate className="text-lg -ml-0.5" />
+                        </IconCell>
+                        <MetaNameCell>Last Updated</MetaNameCell>
+                        <MetaValueCell className="font-medium text-gray-700">
+                            <time>
+                                {formatDateStringWithTimezone(post.lastUpdated)}
+                            </time>
+                        </MetaValueCell>
+                    </tr>
+                )}
             </tbody>
         </table>
     );
