@@ -1,6 +1,7 @@
 ---
 title: Referencing std::vector elements in C++
 date: 2022-03-21T15:00
+lastUpdated: 2022-04-08T07:00
 tags: programming,cpp
 description: Notes and examples on how to properly refererence elements of std::vectors in C++ programs.
 ---
@@ -25,7 +26,7 @@ The good news is that you don't really need to understand how it works to use it
 
 Here's an example using `std::reference_wrapper` in a `std::vector`:
 
-```cpp
+```cpp numbers=yes
 #include <functional> // std::reference_wrapper
 #include <iostream>
 #include <vector>
