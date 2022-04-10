@@ -20,6 +20,9 @@ const run = async () => {
     console.log('Creating XML structure');
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>${BASE_URL}/</loc>
+    </url>
     ${posts
         .map((post) => {
             const lastmod = post.lastUpdated || post.date;
