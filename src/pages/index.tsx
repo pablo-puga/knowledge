@@ -2,7 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import { createContext } from 'react';
 import Description from '../components/Description';
-import PostCard from '../components/PostCard';
+import PostList from '../components/PostList';
 import {
     generateRandonColorHexCode,
     generateRandonDarkColorHexCode,
@@ -10,14 +10,7 @@ import {
 import { getCategoriesFromFileSystem } from '../lib/extractors/categories';
 import { getPostsFromFileSystem } from '../lib/extractors/posts';
 import { getTagsFromFileSystem } from '../lib/extractors/tags';
-
-interface SerializablePost {
-    id: string;
-    category: string;
-    title: string;
-    date: string;
-    tags: string[];
-}
+import type { SerializablePost } from '../types';
 
 interface HomePageProps {
     posts: SerializablePost[];
@@ -80,16 +73,7 @@ const HomePage = ({
             <Description />
             <CategoriesContext.Provider value={categories}>
                 <TagsContext.Provider value={tags}>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-4 sm:auto-rows-fr">
-                        {posts.map((post) => {
-                            const slug = `${post.category}/${post.id}`;
-                            return (
-                                <li key={slug}>
-                                    <PostCard {...post} slug={slug} />
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <PostList posts={posts} />
                 </TagsContext.Provider>
             </CategoriesContext.Provider>
         </>

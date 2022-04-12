@@ -1,3 +1,10 @@
+interface SerializablePost {
+    id: string;
+    category: string;
+    title: string;
+    date: string;
+    tags: string[];
+}
 export interface IPost {
     id: string;
     category: string;
