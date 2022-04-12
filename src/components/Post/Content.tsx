@@ -1,9 +1,13 @@
 import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import CustomCode from './CustomCode';
 import getCustomHeader from './CustomHeader';
 import style from './PostContent.module.css';
+import dynamic from 'next/dynamic';
+
+const DynamicCustomCode = dynamic(() => import('./CustomCode'), {
+    loading: () => <p>Loading highlighted code...</p>,
+});
 
 const Content = ({
     markdown,
@@ -16,7 +20,7 @@ const Content = ({
         <section className={clsx(style.content, className)}>
             <ReactMarkdown
                 components={{
-                    code: CustomCode,
+                    code: DynamicCustomCode,
                     h1: getCustomHeader(1),
                     h2: getCustomHeader(2),
                     h3: getCustomHeader(3),

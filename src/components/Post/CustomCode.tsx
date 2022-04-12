@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import type { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import dracula from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
 
 interface Metadata {
