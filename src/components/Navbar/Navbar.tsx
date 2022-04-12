@@ -19,10 +19,12 @@ const Navbar = ({
                 <Link href={'/'}>
                     <a className="text-xl flex flex-col items-center hover:drop-shadow-lg transition-shadow duration-200">
                         <Image
-                            src="/knowledge-256x256.png"
+                            unoptimized={true}
+                            src="/knowledge-60x60.png"
                             alt="Knowledge Logo"
                             height={height - 10}
                             width={height - 10}
+                            layout="fixed"
                         />
                     </a>
                 </Link>
