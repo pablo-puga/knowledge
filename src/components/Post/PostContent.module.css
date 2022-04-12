@@ -56,11 +56,11 @@
     }
 
     ol {
-        @apply list-decimal pl-5 mt-2 mb-1;
+        @apply list-decimal pl-5 mt-2 mb-1 flex flex-col gap-1.5 md:gap-0;
     }
 
     ul {
-        @apply list-disc pl-5 mt-2 mb-1;
+        @apply list-disc pl-5 mt-2 mb-1 flex flex-col gap-1.5 md:gap-0;
     }
 
     blockquote {
@@ -69,14 +69,14 @@
 
     a {
         @apply text-primary hover:text-quinary transition-colors duration-150 font-medium underline;
+
+        &.header-link {
+            @apply text-gray-300 ml-2 hover:text-primary;
+            font-size: 0.65em;
+        }
     }
 
     .header {
         @apply flex flex-row flex-nowrap items-center;
-    }
-
-    a.header-link {
-        @apply text-gray-300 ml-2 hover:text-primary;
-        font-size: 0.65em;
     }
 }
