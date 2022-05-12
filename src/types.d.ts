@@ -23,3 +23,10 @@ export interface ITagData {
 }
 
 export type TagDataRegister = Record<TagName, ITagData>;
+
+export type CategoryName = string;
+export interface ICategoryData {
+    color: string;
+}
+
+export type CategoryDataRegister = Record<CategoryName, ICategoryData>;

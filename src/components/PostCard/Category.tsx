@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import { useContext } from 'react';
-import { CategoriesContext } from '../../pages';
+import { useCategoryDataContext } from '../CategoryData';
 
 const Category = ({
     children,
@@ -9,8 +8,8 @@ const Category = ({
     children: string;
     className?: string;
 }) => {
-    const categoriesContext = useContext(CategoriesContext);
-    const color = categoriesContext?.[children];
+    const categoryData = useCategoryDataContext();
+    const color = categoryData?.[children].color;
     return (
         <span
             className={clsx(

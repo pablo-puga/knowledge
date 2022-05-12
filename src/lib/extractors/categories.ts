@@ -1,5 +1,7 @@
 import { lstat, readdir } from 'fs/promises';
 import { join as pathJoin } from 'path';
+import type { CategoryDataRegister } from '../../types';
+import { generateRandonDarkColorHexCode } from '../colors';
 
 export const getCategoriesFromFileSystem = async () => {
     const knowledgeDirectory = pathJoin(process.cwd(), 'knowledge');
@@ -12,4 +14,17 @@ export const getCategoriesFromFileSystem = async () => {
         categories.push(item);
     }
     return categories;
+};
+
+export const getColoredCategoriesFromFileSystem = async () => {
+    const categories = await getCategoriesFromFileSystem();
+
+    const categoriesWithColors: CategoryDataRegister = {};
+    for (const category of categories) {
+        categoriesWithColors[category] = {
+            color: generateRandonDarkColorHexCode(),
+        };
+    }
+
+    return categoriesWithColors;
 };

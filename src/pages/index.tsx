@@ -1,34 +1,31 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { createContext } from 'react';
+import CategoryData from '../components/CategoryData';
 import Description from '../components/Description';
 import PostList from '../components/PostList';
 import TagData from '../components/TagData';
-import { generateRandonDarkColorHexCode } from '../lib/colors';
-import { getCategoriesFromFileSystem } from '../lib/extractors/categories';
+import { getColoredCategoriesFromFileSystem } from '../lib/extractors/categories';
 import { getPostsFromFileSystem } from '../lib/extractors/posts';
 import { getColoredTagsFromFileSystem } from '../lib/extractors/tags';
-import type { SerializablePost, TagDataRegister } from '../types';
+import type {
+    CategoryDataRegister,
+    SerializablePost,
+    TagDataRegister,
+} from '../types';
 
 interface HomePageProps {
     posts: SerializablePost[];
-    categories: Record<string, string>;
+    categories: CategoryDataRegister;
     tags: TagDataRegister;
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const posts = await getPostsFromFileSystem();
-    const categories = await getCategoriesFromFileSystem();
     const tags = await getColoredTagsFromFileSystem();
-
-    const categoriesWithColors: Record<string, string> = {};
-    for (const category of categories) {
-        categoriesWithColors[category] = generateRandonDarkColorHexCode();
-    }
 
     return {
         props: {
-            categories: categoriesWithColors,
+            categories: await getColoredCategoriesFromFileSystem(),
             posts: posts.map((post) => ({
                 id: post.id,
                 category: post.category,
@@ -40,8 +37,6 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
         },
     };
 };
-
-export const CategoriesContext = createContext<Record<string, string>>({});
 
 const HomePage = ({
     categories,
@@ -58,11 +53,11 @@ const HomePage = ({
                 />
             </Head>
             <Description />
-            <CategoriesContext.Provider value={categories}>
+            <CategoryData categories={categories}>
                 <TagData tags={tags}>
                     <PostList posts={posts} />
                 </TagData>
-            </CategoriesContext.Provider>
+            </CategoryData>
         </>
     );
 };
