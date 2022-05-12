@@ -15,3 +15,11 @@ export interface IPost {
     tags?: string[];
     content: string;
 }
+
+export type TagName = string;
+export interface ITagData {
+    count: number;
+    color: string;
+}
+
+export type TagDataRegister = Record<TagName, ITagData>;

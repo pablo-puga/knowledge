@@ -1,3 +1,5 @@
+import type { TagDataRegister } from '../../types';
+import { generateRandonColorHexCode } from '../colors';
 import { getPostsFromFileSystem } from './posts';
 
 export const getTagsFromFileSystem = async () => {
@@ -10,4 +12,18 @@ export const getTagsFromFileSystem = async () => {
         }),
     );
     return tags;
+};
+
+export const getColoredTagsFromFileSystem = async () => {
+    const tags = await getTagsFromFileSystem();
+
+    const tagsWithColors: TagDataRegister = {};
+    for (const tag of Object.keys(tags)) {
+        tagsWithColors[tag] = {
+            color: generateRandonColorHexCode(),
+            count: tags[tag],
+        };
+    }
+
+    return tagsWithColors;
 };

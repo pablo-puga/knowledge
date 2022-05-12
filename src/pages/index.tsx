@@ -3,37 +3,27 @@ import Head from 'next/head';
 import { createContext } from 'react';
 import Description from '../components/Description';
 import PostList from '../components/PostList';
-import {
-    generateRandonColorHexCode,
-    generateRandonDarkColorHexCode,
-} from '../lib/colors';
+import TagData from '../components/TagData';
+import { generateRandonDarkColorHexCode } from '../lib/colors';
 import { getCategoriesFromFileSystem } from '../lib/extractors/categories';
 import { getPostsFromFileSystem } from '../lib/extractors/posts';
-import { getTagsFromFileSystem } from '../lib/extractors/tags';
-import type { SerializablePost } from '../types';
+import { getColoredTagsFromFileSystem } from '../lib/extractors/tags';
+import type { SerializablePost, TagDataRegister } from '../types';
 
 interface HomePageProps {
     posts: SerializablePost[];
     categories: Record<string, string>;
-    tags: Record<string, { color: string; count: number }>;
+    tags: TagDataRegister;
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const posts = await getPostsFromFileSystem();
     const categories = await getCategoriesFromFileSystem();
-    const tags = await getTagsFromFileSystem();
+    const tags = await getColoredTagsFromFileSystem();
 
     const categoriesWithColors: Record<string, string> = {};
     for (const category of categories) {
         categoriesWithColors[category] = generateRandonDarkColorHexCode();
-    }
-
-    const tagsWithColors: Record<string, { color: string; count: number }> = {};
-    for (const tag of Object.keys(tags)) {
-        tagsWithColors[tag] = {
-            color: generateRandonColorHexCode(),
-            count: tags[tag],
-        };
     }
 
     return {
@@ -46,15 +36,12 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
                 date: post.date,
                 tags: post.tags ?? [],
             })),
-            tags: tagsWithColors,
+            tags,
         },
     };
 };
 
 export const CategoriesContext = createContext<Record<string, string>>({});
-export const TagsContext = createContext<
-    Record<string, { color: string; count: number }>
->({});
 
 const HomePage = ({
     categories,
@@ -72,9 +59,9 @@ const HomePage = ({
             </Head>
             <Description />
             <CategoriesContext.Provider value={categories}>
-                <TagsContext.Provider value={tags}>
+                <TagData tags={tags}>
                     <PostList posts={posts} />
-                </TagsContext.Provider>
+                </TagData>
             </CategoriesContext.Provider>
         </>
     );

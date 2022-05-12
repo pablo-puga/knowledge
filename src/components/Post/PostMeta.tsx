@@ -1,12 +1,11 @@
-import { useContext } from 'react';
 import { AiFillTags } from 'react-icons/ai';
 import { FaRegClock } from 'react-icons/fa';
 import { IoFileTrayStackedSharp } from 'react-icons/io5';
 import { MdUpdate } from 'react-icons/md';
 import { formatDateStringWithTimezone } from '../../lib/date';
-import { TagsContext } from '../../pages/[category]/[id]';
 import type { IPost } from '../../types';
 import Tag from '../Tag';
+import { useTagDataContext } from '../TagData';
 
 const IconCell = ({ children }: { children: JSX.Element }) => {
     return (
@@ -31,9 +30,9 @@ const MetaValueCell = ({
 };
 
 const PostMeta = ({ post }: { post: IPost }) => {
-    const tagsContext = useContext(TagsContext);
+    const tagsData = useTagDataContext();
 
-    const getColorForTag = (tagName: string) => tagsContext?.[tagName].color;
+    const getColorForTag = (tagName: string) => tagsData?.[tagName].color;
 
     return (
         <table
