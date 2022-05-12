@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import { colorIsLight } from '../../lib/colors';
 
 const Tag = ({
@@ -11,12 +12,14 @@ const Tag = ({
     return (
         <span
             className={clsx(
-                'px-1.5 py-0.5 rounded-sm bg-gray-300',
+                'px-1.5 py-0.5 rounded-sm bg-gray-300 hover:hue-rotate-30 transition-all duration-200',
                 color && !colorIsLight(color) && 'text-white',
             )}
             style={{ backgroundColor: color }}
         >
-            {children}
+            <Link href={`/tag/${children}`}>
+                <a>{children}</a>
+            </Link>
         </span>
     );
 };

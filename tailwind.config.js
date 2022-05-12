@@ -1,5 +1,6 @@
 module.exports = {
     darkMode: 'class',
+    mode: 'jit',
     content: ['./src/**/*.{ts,tsx}'],
     prefix: '',
     theme: {
