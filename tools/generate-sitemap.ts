@@ -3,6 +3,7 @@ import { existsSync } from 'fs';
 import { join as pathJoin } from 'path';
 import { getPostsFromFileSystem } from '../src/lib/extractors/posts';
 import { formatW3CDateWithTimezone } from '../src/lib/date';
+import formatDateIso from 'date-fns/formatISO';
 
 const PUBLIC_DIR = pathJoin(__dirname, '../public');
 const SITEMAP_FILE = pathJoin(PUBLIC_DIR, 'sitemap.xml');
@@ -22,6 +23,7 @@ const run = async () => {
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>${BASE_URL}/</loc>
+        <lastmod>${formatDateIso(new Date())}</lastmod>
     </url>
     ${posts
         .map((post) => {
