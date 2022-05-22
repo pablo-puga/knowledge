@@ -5,7 +5,9 @@ export const generateRandonColorHexCode = () => {
     const color = tinycolor.random().brighten(10).lighten(10);
 
     if (tinycolor.readability(color, '#ffffff') === 1) {
-        color.darken(15);
+        color.darken(20);
+    } else if (tinycolor.readability(color, '#000000') === 1) {
+        color.lighten(20);
     }
 
     return color.toHexString();
@@ -15,6 +17,8 @@ export const generateRandonDarkColorHexCode = () => {
     const color = tinycolor.random();
     if (color.isLight()) {
         return color.complement().toHexString();
+    } else if (tinycolor.readability(color, '#000000') === 1) {
+        color.lighten(25);
     }
     return color.toHexString();
 };

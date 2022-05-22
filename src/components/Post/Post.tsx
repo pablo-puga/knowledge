@@ -5,7 +5,7 @@ import PostMeta from './PostMeta';
 const Post = ({ post }: { post: IPost }) => {
     return (
         <article className="mx-auto mb-10 px-4" style={{ maxWidth: '1024px' }}>
-            <h1 className="text-4xl font-medium drop-shadow-sm text-primary shadow-primary">
+            <h1 className="text-4xl font-medium drop-shadow-sm text-theme-purple shadow-theme-purple">
                 {post.title}
             </h1>
             <PostMeta post={post} />

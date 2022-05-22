@@ -9,14 +9,14 @@ import { useTagDataContext } from '../TagData';
 
 const IconCell = ({ children }: { children: JSX.Element }) => {
     return (
-        <td className="text-center align-middle w-5 text-gray-400">
+        <td className="text-center align-middle w-5 text-theme-grey-light">
             {children}
         </td>
     );
 };
 
 const MetaNameCell = ({ children }: { children: string }) => {
-    return <td className="text-gray-400 pr-4">{children}</td>;
+    return <td className="text-theme-grey-light pr-4">{children}</td>;
 };
 
 const MetaValueCell = ({
@@ -45,7 +45,7 @@ const PostMeta = ({ post }: { post: IPost }) => {
                         <IoFileTrayStackedSharp />
                     </IconCell>
                     <MetaNameCell>Category</MetaNameCell>
-                    <MetaValueCell className="capitalize font-medium text-gray-700">
+                    <MetaValueCell className="capitalize font-medium text-theme-grey-light/80">
                         {post.category}
                     </MetaValueCell>
                 </tr>
@@ -73,7 +73,7 @@ const PostMeta = ({ post }: { post: IPost }) => {
                         <FaRegClock />
                     </IconCell>
                     <MetaNameCell>Created</MetaNameCell>
-                    <MetaValueCell className="font-medium text-gray-700">
+                    <MetaValueCell className="font-medium text-theme-grey-light/80">
                         <time>{formatDateStringWithTimezone(post.date)}</time>
                     </MetaValueCell>
                 </tr>
@@ -83,7 +83,7 @@ const PostMeta = ({ post }: { post: IPost }) => {
                             <MdUpdate className="text-lg -ml-0.5" />
                         </IconCell>
                         <MetaNameCell>Last Updated</MetaNameCell>
-                        <MetaValueCell className="font-medium text-gray-700">
+                        <MetaValueCell className="font-medium text-theme-grey-light/80">
                             <time>
                                 {formatDateStringWithTimezone(post.lastUpdated)}
                             </time>

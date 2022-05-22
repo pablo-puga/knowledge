@@ -205,7 +205,7 @@
 @tailwind utilities;
 
 html {
-    @apply font-roboto bg-gray-100 text-gray-900;
+    @apply font-roboto bg-theme-black text-theme-grey-light;
 }
 
 code,
@@ -217,4 +217,19 @@ pre {
 
 * {
     @apply outline-none;
+}
+
+.theme-dark {
+    --theme-black: 40 42 54;
+    --theme-grey-dark: 68 71 90;
+    --theme-grey-light: 188 194 205;
+    --theme-white: 248 248 242;
+    --theme-indigo: 98 114 164;
+    --theme-cyan: 139 233 253;
+    --theme-green: 80 250 123;
+    --theme-orange: 255 184 108;
+    --theme-pink: 255 121 198;
+    --theme-purple: 189 147 249;
+    --theme-red: 255 85 85;
+    --theme-yellow: 241 250 140;
 }

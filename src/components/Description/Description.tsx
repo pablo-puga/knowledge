@@ -3,7 +3,7 @@ import Image from 'next/image';
 const Description = () => {
     return (
         <article className="flex flex-row flex-wrap items-center max-w-5xl mx-auto mb-4 md:mb-0">
-            <h1 className="text-3xl font-medium text-center md:text-4xl lg:font-bold lg:drop-shadow-sm w-full mb-2 md:mb-0">
+            <h1 className="text-theme-purple text-3xl font-medium text-center md:text-4xl lg:font-bold lg:drop-shadow-sm w-full mb-2 md:mb-0">
                 Pablo&apos;s Knowledge
             </h1>
             <div className="hidden md:block md:w-1/3">
@@ -12,6 +12,7 @@ const Description = () => {
                     alt="Knowledge main logo"
                     width={256}
                     height={256}
+                    priority
                 />
             </div>
             <section className="text-sm text-justify sm:text-base md:w-2/3 lg:text-lg">

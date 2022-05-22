@@ -13,7 +13,9 @@ const Tag = ({
         <span
             className={clsx(
                 'px-1.5 py-0.5 rounded-sm bg-gray-300 hover:hue-rotate-30 transition-all duration-200',
-                color && !colorIsLight(color) && 'text-white',
+                color && !colorIsLight(color)
+                    ? 'text-theme-white'
+                    : 'text-theme-black',
             )}
             style={{ backgroundColor: color }}
         >

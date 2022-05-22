@@ -20,13 +20,15 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
 
     return (
         <article
-            className="border rounded-sm shadow-sm h-full py-2 px-3 bg-white text-gray-900 grid"
+            className="border-2 rounded shadow-sm h-full py-2 px-3 border-theme-purple bg-theme-black grid"
             style={{ gridTemplateRows: 'auto 1fr' }}
         >
             <Category className="row-span-1">{category}</Category>
-            <h1 className="mt-1 font-semibold text-lg hover:text-primary transition-colors duration-150 visited:text-quinary visited:hover:text-primary row-span-2">
+            <h1 className="mt-1 font-semibold text-lg text-theme-white row-span-2">
                 <Link href={`/${slug}`}>
-                    <a>{title}</a>
+                    <a className="hover:text-theme-green visited:text-theme-purple visited:hover:text-theme-green transition-colors duration-200">
+                        {title}
+                    </a>
                 </Link>
             </h1>
             {tags && tags.length > 0 && (
@@ -38,7 +40,7 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
                     ))}
                 </ul>
             )}
-            <small className="mt-1.5 flex flex-row flex-nowrap items-center text-xs text-gray-500 row-span-1 row-start-5">
+            <small className="mt-1.5 flex flex-row flex-nowrap items-center text-xs text-theme-grey-light/90 row-span-1 row-start-5">
                 <FaRegClock className="mr-1" />{' '}
                 <time>{formatDateStringWithTimezone(date)}</time>
             </small>

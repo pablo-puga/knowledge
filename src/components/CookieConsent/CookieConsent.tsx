@@ -30,7 +30,7 @@ const CookieConsent = (props: CookieConsentProps) => {
     return (
         <article
             className={clsx(
-                'fixed bg-quinary sm:shadow-sm sm:shadow-quinary text-white p-4 sm:max-w-lg text-sm sm:text-base',
+                'fixed bg-theme-grey-dark rounded text-theme-white p-4 sm:max-w-lg text-sm sm:text-base border border-theme-grey-light',
                 hidden && styles['consent-hidden'],
             )}
             style={{
@@ -46,13 +46,13 @@ const CookieConsent = (props: CookieConsentProps) => {
             </p>
             <div className="mt-2 flex flex-row justify-end gap-4">
                 <button
-                    className="bg-quaternary text-gray-900 px-3 py-1 rounded-sm font-medium hover:bg-tertiary transition-colors duration-200"
+                    className="bg-theme-black text-theme-white px-3 py-1 rounded-sm font-medium hover:bg-theme-green hover:text-theme-black transition-colors duration-200"
                     onClick={accept}
                 >
                     Accept
                 </button>
                 <button
-                    className="bg-quaternary text-gray-900 px-3 py-1 rounded-sm font-medium hover:bg-primary hover:text-white transition-colors duration-200"
+                    className="bg-theme-black text-theme-white px-3 py-1 rounded-sm font-medium hover:bg-theme-orange hover:text-theme-black transition-colors duration-200"
                     onClick={reject}
                 >
                     Reject

@@ -12,7 +12,7 @@ const Navbar = ({
 }) => {
     return (
         <nav
-            className="fixed top-0 left-0 w-full bg-primary shadow-sm shadow-primary flex flex-row items-center justify-between pl-3 pr-1.5 z-40"
+            className="fixed top-0 left-0 w-full bg-theme-indigo shadow-sm shadow-theme-indigo flex flex-row items-center justify-between pl-3 pr-1.5 z-40"
             style={{ ...style, height: `${height}px` }}
         >
             <div className="flex flex-row items-center">
@@ -28,7 +28,7 @@ const Navbar = ({
                         />
                     </a>
                 </Link>
-                <h1 className="text-xl font-bold ml-3">
+                <h1 className="text-xl font-bold ml-3 text-theme-black">
                     Pablo&apos;s Knowledge
                 </h1>
             </div>
