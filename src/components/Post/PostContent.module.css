@@ -33,7 +33,7 @@
     }
 
     pre {
-        @apply mt-5 mb-5 border border-theme-purple rounded-sm;
+        @apply mt-5 mb-5 border border-theme-purple rounded-sm relative;
 
         code {
             @apply px-0;

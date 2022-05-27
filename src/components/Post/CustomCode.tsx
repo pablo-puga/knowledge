@@ -33,6 +33,12 @@ const parseMetaData = (rawMetaData: string): Metadata => {
     };
 };
 
+const LanguageDisplay = ({ children }: { children: string }) => (
+    <span className="absolute top-1 right-1 rounded-sm text-xs font-bold align-text-top px-2 pt-0.5 pb-1 text-theme-white bg-theme-purple/70">
+        {children}
+    </span>
+);
+
 const CustomCode = ({
     inline,
     className,
@@ -43,15 +49,18 @@ const CustomCode = ({
     const match = /language-(\w+)/.exec(className || '');
     const metadata = parseMetaData((node?.data?.meta as string) || '');
     return !inline && match ? (
-        <SyntaxHighlighter
-            style={dracula}
-            showLineNumbers={metadata.withLineNumbers}
-            language={match[1]}
-            PreTag="div"
-            {...props}
-        >
-            {String(children).replace(/\n$/, '')}
-        </SyntaxHighlighter>
+        <>
+            <LanguageDisplay>{match[1]}</LanguageDisplay>
+            <SyntaxHighlighter
+                style={dracula}
+                showLineNumbers={metadata.withLineNumbers}
+                language={match[1]}
+                PreTag="div"
+                {...props}
+            >
+                {String(children).replace(/\n$/, '')}
+            </SyntaxHighlighter>
+        </>
     ) : (
         <code className={className} {...props}>
             {children}
