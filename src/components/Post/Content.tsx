@@ -6,7 +6,9 @@ import style from './PostContent.module.css';
 import dynamic from 'next/dynamic';
 
 const DynamicCustomCode = dynamic(() => import('./CustomCode'), {
-    loading: () => <p>Loading highlighted code...</p>,
+    loading: () => (
+        <p className="px-4 pt-1 font-roboto">Loading highlighted code...</p>
+    ),
 });
 
 const Content = ({
