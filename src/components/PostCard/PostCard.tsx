@@ -24,9 +24,9 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
             style={{ gridTemplateRows: 'auto 1fr' }}
         >
             <Category className="row-span-1">{category}</Category>
-            <h1 className="mt-1 font-semibold text-lg text-theme-white row-span-2">
+            <h1 className="mt-1 font-semibold text-lg row-span-2">
                 <Link href={`/${slug}`}>
-                    <a className="hover:text-theme-green visited:text-theme-purple visited:hover:text-theme-green transition-colors duration-200">
+                    <a className="text-theme-purple hover:text-theme-green visited:text-theme-indigo visited:hover:text-theme-green transition-colors duration-200">
                         {title}
                     </a>
                 </Link>
