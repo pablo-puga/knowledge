@@ -1,17 +1,4 @@
 import tinycolor from 'tinycolor2';
-import { KnowledgeError } from './error';
-
-export const generateRandonColorHexCode = () => {
-    const color = tinycolor.random().brighten(10).lighten(10);
-
-    if (tinycolor.readability(color, '#ffffff') === 1) {
-        color.darken(20);
-    } else if (tinycolor.readability(color, '#000000') === 1) {
-        color.lighten(20);
-    }
-
-    return color.toHexString();
-};
 
 export const generateRandonDarkColorHexCode = () => {
     const color = tinycolor.random();
@@ -23,11 +10,11 @@ export const generateRandonDarkColorHexCode = () => {
     return color.toHexString();
 };
 
-export const colorIsLight = (colorCode: string) => {
-    const analysis = tinycolor(colorCode);
-    if (!analysis.isValid()) {
-        throw new KnowledgeError(`Invalid color ${colorCode}`);
-    }
-
-    return analysis.isLight();
+export const generateRandomTagColor = (tagname: string) => {
+    const total = tagname
+        .split('')
+        .reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    const module = total % 360;
+    const color = tinycolor({ h: module, s: 100, l: 0.8 });
+    return color.toHexString();
 };
