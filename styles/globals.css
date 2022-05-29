@@ -1,7 +1,7 @@
 /**********************************
  *          ROBOTO FAMILY         *
  **********************************/
-/* @font-face {
+@font-face {
     font-family: Roboto;
     src: url('/fonts/Roboto/Roboto-Thin.ttf');
     font-weight: 100;
@@ -88,6 +88,9 @@
     font-display: swap;
 }
 
+/**********************************
+ *       ROBOTO MONO FAMILY       *
+ **********************************/
 @font-face {
     font-family: RobotoMono;
     src: url('/fonts/RobotoMono/RobotoMono-Thin.ttf');
@@ -198,7 +201,7 @@
     font-weight: 700;
     font-style: italic;
     font-display: swap;
-} */
+}
 
 @tailwind base;
 @tailwind components;
@@ -212,7 +215,7 @@ code,
 kbd,
 samp,
 pre {
-    @apply font-robotomono text-sm;
+    @apply !font-robotomono text-sm;
 }
 
 * {

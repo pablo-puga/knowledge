@@ -34,7 +34,7 @@ const parseMetaData = (rawMetaData: string): Metadata => {
 };
 
 const LanguageDisplay = ({ children }: { children: string }) => (
-    <span className="absolute top-1 right-1 rounded-sm text-xs font-bold align-text-top px-2 pt-0.5 pb-1 text-theme-white bg-theme-purple/70">
+    <span className="absolute top-1 right-1 rounded-sm text-xs font-bold align-text-top px-2 pt-0.5 pb-0.5 text-theme-white bg-theme-purple/70">
         {children}
     </span>
 );
