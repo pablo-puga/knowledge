@@ -1,19 +1,18 @@
-import formatDate from 'date-fns/format';
-import formatDateIso from 'date-fns/formatISO';
-import { toDate } from 'date-fns-tz';
+import { toDate, formatInTimeZone } from 'date-fns-tz';
 import compareAsc from 'date-fns/compareAsc';
 import compareDesc from 'date-fns/compareDesc';
 
-const TODATE_OPTS = { timeZone: 'Europe/Madrid' };
+const TIMEZONE = 'Europe/Madrid';
+const TODATE_OPTS = { timeZone: TIMEZONE };
 
 export const formatDateStringWithTimezone = (datestr: string) => {
     const date = toDate(datestr, TODATE_OPTS);
-    return formatDate(date, 'dd MMMM yyyy hh:mm aaa');
+    return formatInTimeZone(date, TIMEZONE, 'dd MMMM yyyy hh:mm aaa');
 };
 
 export const formatW3CDateWithTimezone = (datestr: string) => {
     const date = toDate(datestr, TODATE_OPTS);
-    return formatDateIso(date);
+    return formatInTimeZone(date, TIMEZONE, "yyyy-MM-dd'T'HH:mm:ssxxx");
 };
 
 export const compareDateStr = (
