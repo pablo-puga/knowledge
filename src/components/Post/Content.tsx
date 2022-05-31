@@ -30,7 +30,7 @@ const Content = ({
                     h5: getCustomHeader(5),
                     h6: getCustomHeader(6),
                 }}
-                plugins={[remarkGfm]}
+                remarkPlugins={[remarkGfm]}
             >
                 {markdown}
             </ReactMarkdown>
