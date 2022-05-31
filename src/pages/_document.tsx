@@ -10,6 +10,11 @@ const Document = () => {
                     property="og:image"
                     content={`${BASE_URL}/knowledge-256x256.png`}
                 />
+                <link
+                    rel="icon"
+                    href={`${BASE_URL}/favicon.ico`}
+                    type="image/x-icon"
+                />
             </Head>
             <body>
                 <Main />
