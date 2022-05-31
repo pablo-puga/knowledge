@@ -31,9 +31,9 @@ const Navbar = ({
                         />
                     </a>
                 </Link>
-                <h1 className="text-xl font-bold ml-3 text-theme-black">
+                <span className="text-xl font-bold ml-3 text-theme-black">
                     Pablo&apos;s Knowledge
-                </h1>
+                </span>
             </div>
             {/* <div className="flex flex-row flex-nowrap items-center bg-gray-200 px-2 py-0.5 rounded-sm">
                 <FaSearch className="text-gray-400" />
