@@ -10,6 +10,7 @@ const Footer = () => {
                 <a
                     className="hover:text-theme-green underline transition-colors duration-150"
                     href="https://pablopugaperalta.com"
+                    title="My webpage"
                 >
                     pablopugaperalta.com
                 </a>
@@ -19,6 +20,7 @@ const Footer = () => {
                 <a
                     href="https://github.com/pablo-puga"
                     className="hover:text-theme-green underline transition-colors duration-150"
+                    title="My GitHub page"
                 >
                     <FaGithub className="inline-block align-text-top ml-1 mr-1" />
                     pablo-puga

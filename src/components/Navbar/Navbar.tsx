@@ -17,7 +17,10 @@ const Navbar = ({
         >
             <div className="flex flex-row items-center">
                 <Link href={'/'}>
-                    <a className="text-xl flex flex-col items-center hover:drop-shadow-lg transition-shadow duration-200">
+                    <a
+                        className="text-xl flex flex-col items-center hover:drop-shadow-lg transition-shadow duration-200"
+                        title="Home page"
+                    >
                         <Image
                             unoptimized={true}
                             src="/knowledge-60x60.png"

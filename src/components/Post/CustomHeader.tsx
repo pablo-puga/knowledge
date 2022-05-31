@@ -16,6 +16,8 @@ const getCustomHeader = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
             .toLowerCase()
             .replace(/[()\/]/g, '')
             .replace(/\s/g, '-');
+        const anchorTitle =
+            typeof title === 'string' ? title : `Anchor to ${slug}`;
         return (
             <TagName className={clsx(className, style.header)} id={slug}>
                 {title}
@@ -24,6 +26,7 @@ const getCustomHeader = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
                     tabIndex={-1}
                     href={`#${slug}`}
                     className={style['header-link']}
+                    title={anchorTitle}
                 >
                     <FaLink className="inline-block" aria-hidden={true} />
                 </a>

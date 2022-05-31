@@ -26,7 +26,10 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
             <Category className="row-span-1">{category}</Category>
             <h2 className="mt-1 font-semibold text-lg row-span-2">
                 <Link href={`/${slug}`}>
-                    <a className="text-theme-purple hover:text-theme-green visited:text-theme-indigo visited:hover:text-theme-green transition-colors duration-200">
+                    <a
+                        className="text-theme-purple hover:text-theme-green visited:text-theme-indigo visited:hover:text-theme-green transition-colors duration-200"
+                        title={title}
+                    >
                         {title}
                     </a>
                 </Link>
