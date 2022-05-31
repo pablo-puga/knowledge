@@ -50,11 +50,11 @@ const HomePage = ({
                 <meta property="og:title" content="Pablo's Knowledge" />
                 <meta
                     name="description"
-                    content="This repository of knowlege is a collection of commands, programming pieces or general concepts that I found myself Googling again and again"
+                    content="This repository of knowledge is a collection of commands, programming pieces or general concepts that I found myself Googling again and again"
                 />
                 <meta
                     property="og:description"
-                    content="This repository of knowlege is a collection of commands, programming pieces or general concepts that I found myself Googling again and again"
+                    content="This repository of knowledge is a collection of commands, programming pieces or general concepts that I found myself Googling again and again"
                 />
             </Head>
             <Description />

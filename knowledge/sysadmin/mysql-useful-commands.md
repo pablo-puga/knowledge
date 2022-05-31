@@ -1,13 +1,13 @@
 ---
-title: Usefull MySQL administration commands
+title: Useful MySQL administration commands
 date: 2022-03-21T16:00
 tags: mysql
-description: List of usefull MySQL commands to monitor the usage of the database server.
+description: List of useful MySQL commands to monitor the usage of the database server.
 ---
 
-# Usefull MySQL administration commands to check its status
+# Useful MySQL administration commands to check its status
 
-- [Usefull MySQL administration commands to check its status](#usefull-mysql-administration-commands-to-check-its-status)
+- [Useful MySQL administration commands to check its status](#useful-mysql-administration-commands-to-check-its-status)
   - [Check logged users by host](#check-logged-users-by-host)
   - [View InnoDB Status](#view-innodb-status)
   - [List database processes](#list-database-processes)
