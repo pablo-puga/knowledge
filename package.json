@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "npm run knowledge:build:sitemap",
+    "postbuild": "npm run knowledge:build:resources",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
@@ -23,6 +23,8 @@
     "test:coverage": "vitest run --coverage",
     "knowledge:extract:categories": "ts-node --pretty tools/extract-categories.ts",
     "knowledge:extract:tags": "ts-node --pretty tools/extract-tags.ts",
+    "knowledge:build:resources": "npm run knowledge:build:robots && npm run knowledge:build:sitemap",
+    "knowledge:build:robots": "ts-node --pretty tools/generate-robots.ts",
     "knowledge:build:sitemap": "ts-node --pretty tools/generate-sitemap.ts"
   },
   "dependencies": {
