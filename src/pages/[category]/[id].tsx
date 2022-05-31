@@ -55,8 +55,13 @@ const PostPage = ({
         <>
             <Head>
                 <title>{post.title}</title>
+                <meta property="og:title" content={post.title} />
                 <meta
                     name="description"
+                    content={post.description || post.title}
+                />
+                <meta
+                    property="og:description"
                     content={post.description || post.title}
                 />
             </Head>

@@ -79,8 +79,13 @@ const PostByCategoryPage = ({
         <>
             <Head>
                 <title>&quot;{tagname}&quot; posts</title>
+                <meta property="og:title" content={`"${tagname}"`} />
                 <meta
                     name="description"
+                    content={`List of posts for the ${tagname} tag`}
+                />
+                <meta
+                    property="og:description"
                     content={`List of posts for the ${tagname} tag`}
                 />
             </Head>

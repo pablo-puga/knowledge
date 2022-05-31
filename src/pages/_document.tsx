@@ -1,9 +1,16 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+
 const Document = () => {
     return (
         <Html lang="en-US" className="theme-dark">
-            <Head />
+            <Head>
+                <meta
+                    property="og:image"
+                    content={`${BASE_URL}/knowledge-256x256.png`}
+                />
+            </Head>
             <body>
                 <Main />
                 <NextScript />
