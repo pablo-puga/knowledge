@@ -17,8 +17,8 @@ const Description = () => {
             </div>
             <section className="text-sm text-justify sm:text-base md:w-2/3 lg:text-lg">
                 <p className="mb-2">
-                    This repository is a collection of commands, programming
-                    pieces or general concepts that I found myself{' '}
+                    This repository of knowledge is a collection of commands,
+                    programming pieces or general concepts that I found myself{' '}
                     <i>Googling</i> again and again, keeping them as random
                     notes in Notion or Evernote or just plain markers in my
                     browser.
