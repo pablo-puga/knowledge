@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { formatDateStringWithTimezone } from '../../lib/date';
+import {
+    formatDateStringWithTimezone,
+    formatW3CDateWithTimezone,
+} from '../../lib/date';
 import { FaRegClock } from 'react-icons/fa';
 import Category from './Category';
 import Tag from '../Tag';
@@ -45,7 +48,9 @@ const PostCard = ({ title, category, slug, date, tags }: PostCardProps) => {
             )}
             <small className="mt-1.5 flex flex-row flex-nowrap items-center text-xs text-theme-grey-light/90 row-span-1 row-start-5">
                 <FaRegClock className="mr-1" />{' '}
-                <time>{formatDateStringWithTimezone(date)}</time>
+                <time dateTime={formatW3CDateWithTimezone(date)}>
+                    {formatDateStringWithTimezone(date)}
+                </time>
             </small>
         </article>
     );

@@ -2,7 +2,10 @@ import { AiFillTags } from 'react-icons/ai';
 import { FaRegClock } from 'react-icons/fa';
 import { IoFileTrayStackedSharp } from 'react-icons/io5';
 import { MdUpdate } from 'react-icons/md';
-import { formatDateStringWithTimezone } from '../../lib/date';
+import {
+    formatDateStringWithTimezone,
+    formatW3CDateWithTimezone,
+} from '../../lib/date';
 import type { IPost } from '../../types';
 import Tag from '../Tag';
 import { useTagDataContext } from '../TagData';
@@ -74,7 +77,9 @@ const PostMeta = ({ post }: { post: IPost }) => {
                     </IconCell>
                     <MetaNameCell>Created</MetaNameCell>
                     <MetaValueCell className="font-medium text-theme-grey-light/80">
-                        <time>{formatDateStringWithTimezone(post.date)}</time>
+                        <time dateTime={formatW3CDateWithTimezone(post.date)}>
+                            {formatDateStringWithTimezone(post.date)}
+                        </time>
                     </MetaValueCell>
                 </tr>
                 {post.lastUpdated && (
@@ -84,7 +89,11 @@ const PostMeta = ({ post }: { post: IPost }) => {
                         </IconCell>
                         <MetaNameCell>Last Updated</MetaNameCell>
                         <MetaValueCell className="font-medium text-theme-grey-light/80">
-                            <time>
+                            <time
+                                dateTime={formatW3CDateWithTimezone(
+                                    post.lastUpdated,
+                                )}
+                            >
                                 {formatDateStringWithTimezone(post.lastUpdated)}
                             </time>
                         </MetaValueCell>
