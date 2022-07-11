@@ -15,7 +15,7 @@ const Description = () => {
                     priority
                 />
             </div>
-            <section className="text-sm text-justify sm:text-base md:w-2/3 lg:text-lg">
+            <div className="text-sm text-justify sm:text-base md:w-2/3 lg:text-lg">
                 <p className="mb-2">
                     This repository of knowledge is a collection of commands,
                     programming pieces or general concepts that I found myself{' '}
@@ -29,7 +29,7 @@ const Description = () => {
                     Next.js so I decided to give it a try and this webpage is
                     the result of that.
                 </p>
-            </section>
+            </div>
         </article>
     );
 };
