@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { useDebugValue, useEffect, useState } from 'react';
 
 const COOKIE_CONSENT_NAME = 'cookie-consent';
-const COOKIE_CONSENT_MAXAGE_DAYS = 30;
+const COOKIE_CONSENT_MAXAGE_DAYS = 30 * 3;
 export const COOKIE_CONSENT_MAXAGE = 60 * 60 * 24 * COOKIE_CONSENT_MAXAGE_DAYS; //1 month
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
