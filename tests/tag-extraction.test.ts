@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest';
+
 import { getColoredTagsFromFileSystem } from '../src/lib/extractors/tags';
 
 describe('tag extraction', async () => {
