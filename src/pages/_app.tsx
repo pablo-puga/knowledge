@@ -1,12 +1,14 @@
 import '../../styles/globals.css';
-import type { AppProps } from 'next/app';
 import Script from 'next/script';
+
+import CookieConsent from '../components/CookieConsent';
 import Layout from '../components/Layout';
 import useCookieConsent, {
     COOKIE_CONSENT_MAXAGE,
     GA_ID,
 } from '../lib/use-cookie-consent';
-import CookieConsent from '../components/CookieConsent';
+
+import type { AppProps } from 'next/app';
 
 const KnowledgeApp = ({ Component, pageProps }: AppProps) => {
     const cookieConsent = useCookieConsent();

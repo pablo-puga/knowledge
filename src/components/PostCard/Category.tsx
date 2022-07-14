@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import { useCategoryDataContext } from '../CategoryData';
 
 const Category = ({

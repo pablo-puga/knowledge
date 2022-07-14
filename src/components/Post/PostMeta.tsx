@@ -2,13 +2,15 @@ import { AiFillTags } from 'react-icons/ai';
 import { FaRegClock } from 'react-icons/fa';
 import { IoFileTrayStackedSharp } from 'react-icons/io5';
 import { MdUpdate } from 'react-icons/md';
+
 import {
     formatDateStringWithTimezone,
     formatW3CDateWithTimezone,
 } from '../../lib/date';
-import type { IPost } from '../../types';
 import Tag from '../Tag';
 import { useTagDataContext } from '../TagData';
+
+import type { IPost } from '../../types';
 
 const IconCell = ({ children }: { children: JSX.Element }) => {
     return (

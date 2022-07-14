@@ -1,5 +1,6 @@
-import type { SerializablePost } from '../../types';
 import PostCard from '../PostCard';
+
+import type { SerializablePost } from '../../types';
 
 const PostList = ({ posts }: { posts: SerializablePost[] }) => {
     return (

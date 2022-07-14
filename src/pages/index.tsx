@@ -1,5 +1,5 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
+
 import CategoryData from '../components/CategoryData';
 import Description from '../components/Description';
 import PostList from '../components/PostList';
@@ -7,11 +7,13 @@ import TagData from '../components/TagData';
 import { getColoredCategoriesFromFileSystem } from '../lib/extractors/categories';
 import { getPostsFromFileSystem } from '../lib/extractors/posts';
 import { getColoredTagsFromFileSystem } from '../lib/extractors/tags';
+
 import type {
     CategoryDataRegister,
     SerializablePost,
     TagDataRegister,
 } from '../types';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 interface HomePageProps {
     posts: SerializablePost[];

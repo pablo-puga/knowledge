@@ -1,7 +1,9 @@
 import { lstat, readdir } from 'fs/promises';
 import { join as pathJoin } from 'path';
-import type { CategoryDataRegister } from '../../types';
+
 import { generateRandonDarkColorHexCode } from '../colors';
+
+import type { CategoryDataRegister } from '../../types';
 
 export const getCategoriesFromFileSystem = async () => {
     const knowledgeDirectory = pathJoin(process.cwd(), 'knowledge');

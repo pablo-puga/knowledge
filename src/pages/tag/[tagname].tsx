@@ -1,10 +1,5 @@
-import type {
-    GetStaticPaths,
-    GetStaticProps,
-    InferGetStaticPropsType,
-} from 'next';
 import Head from 'next/head';
-import type { ParsedUrlQuery } from 'querystring';
+
 import CategoryData from '../../components/CategoryData';
 import PostList from '../../components/PostList';
 import TagData from '../../components/TagData';
@@ -14,11 +9,18 @@ import {
     getColoredTagsFromFileSystem,
     getTagsFromFileSystem,
 } from '../../lib/extractors/tags';
+
 import type {
     CategoryDataRegister,
     SerializablePost,
     TagDataRegister,
 } from '../../types';
+import type {
+    GetStaticPaths,
+    GetStaticProps,
+    InferGetStaticPropsType,
+} from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const tags = await getTagsFromFileSystem();

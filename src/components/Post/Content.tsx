@@ -1,9 +1,10 @@
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+
 import getCustomHeader from './CustomHeader';
 import style from './PostContent.module.css';
-import dynamic from 'next/dynamic';
 
 const DynamicCustomCode = dynamic(() => import('./CustomCode'), {
     loading: () => (

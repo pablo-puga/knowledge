@@ -1,5 +1,5 @@
-import { useDebugValue, useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
+import { useDebugValue, useEffect, useState } from 'react';
 
 const COOKIE_CONSENT_NAME = 'cookie-consent';
 const COOKIE_CONSENT_MAXAGE_DAYS = 30;

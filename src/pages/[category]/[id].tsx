@@ -1,10 +1,5 @@
-import type {
-    GetStaticPaths,
-    GetStaticProps,
-    InferGetStaticPropsType,
-} from 'next';
 import Head from 'next/head';
-import type { ParsedUrlQuery } from 'querystring';
+
 import Post from '../../components/Post';
 import TagData from '../../components/TagData';
 import {
@@ -12,7 +7,14 @@ import {
     getSinglePostFromFilesystem,
 } from '../../lib/extractors/posts';
 import { getColoredTagsFromFileSystem } from '../../lib/extractors/tags';
+
 import type { IPost } from '../../types';
+import type {
+    GetStaticPaths,
+    GetStaticProps,
+    InferGetStaticPropsType,
+} from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPostsFromFileSystem();

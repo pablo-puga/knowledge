@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+
+import type { ReactNode } from 'react';
 
 const NAVBAR_HEIGHT = 40;
 

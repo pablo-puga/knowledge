@@ -1,8 +1,10 @@
 import clsx from 'clsx';
-import type { PropsWithChildren } from 'react';
 import { FaLink } from 'react-icons/fa';
-import type { HeadingProps } from 'react-markdown/lib/ast-to-react';
+
 import style from './PostContent.module.css';
+
+import type { PropsWithChildren } from 'react';
+import type { HeadingProps } from 'react-markdown/lib/ast-to-react';
 
 const getCustomHeader = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
     const TagName = `h${level}` as keyof JSX.IntrinsicElements;

@@ -25,9 +25,28 @@
         "skipBlankLines": true
       }
     ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "object",
+          "sibling",
+          "index",
+          "type"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-anonymous-default-export": "off",
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "import/no-anonymous-default-export": "off",
     "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

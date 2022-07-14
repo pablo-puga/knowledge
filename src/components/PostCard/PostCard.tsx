@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import { FaRegClock } from 'react-icons/fa';
+
 import {
     formatDateStringWithTimezone,
     formatW3CDateWithTimezone,
 } from '../../lib/date';
-import { FaRegClock } from 'react-icons/fa';
-import Category from './Category';
 import Tag from '../Tag';
 import { useTagDataContext } from '../TagData';
+
+import Category from './Category';
 
 interface PostCardProps {
     title: string;

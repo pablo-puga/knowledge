@@ -1,6 +1,7 @@
-import type { IPost } from '../../types';
 import Content from './Content';
 import PostMeta from './PostMeta';
+
+import type { IPost } from '../../types';
 
 const Post = ({ post }: { post: IPost }) => {
     return (

@@ -1,6 +1,8 @@
-import type { TagDataRegister } from '../../types';
 import { generateRandomTagColor } from '../colors';
+
 import { getPostsFromFileSystem } from './posts';
+
+import type { TagDataRegister } from '../../types';
 
 export const getTagsFromFileSystem = async () => {
     const posts = await getPostsFromFileSystem();
