@@ -1,6 +1,6 @@
-import { toDate, formatInTimeZone } from 'date-fns-tz';
 import compareAsc from 'date-fns/compareAsc';
 import compareDesc from 'date-fns/compareDesc';
+import { toDate, formatInTimeZone } from 'date-fns-tz';
 
 const TIMEZONE = 'Europe/Madrid';
 const TODATE_OPTS = { timeZone: TIMEZONE };

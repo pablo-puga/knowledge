@@ -45,6 +45,7 @@ const CustomCode = ({
     className,
     children,
     node,
+    style,
     ...props
 }: PropsWithChildren<CodeProps>) => {
     const match = /language-(\w+)/.exec(className || '');
@@ -54,6 +55,7 @@ const CustomCode = ({
             <LanguageDisplay>{match[1]}</LanguageDisplay>
             <SyntaxHighlighter
                 style={dracula}
+                customStyle={style}
                 showLineNumbers={metadata.withLineNumbers}
                 language={match[1]}
                 PreTag="div"
