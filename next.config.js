@@ -4,6 +4,9 @@ const nextConfig = {
     env: {
         version: process.env.npm_package_version,
     },
+    experimental: {
+        webVitalsAttribution: ['FCP', 'LCP', 'CLS', 'FID', 'TTFB', 'INP'],
+    },
 };
 
 if (process.env.APP_ENV === 'profile') {
