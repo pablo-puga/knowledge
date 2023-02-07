@@ -14,7 +14,7 @@ const useCookieConsent = () => {
         const consentCookie = Cookies.get(COOKIE_CONSENT_NAME);
         if (!consentCookie) {
             setNeedsConsent(true);
-            setAllowed(true);
+            setAllowed(false);
         } else {
             setNeedsConsent(false);
             setAllowed(consentCookie === 'yes');
@@ -30,33 +30,53 @@ const useCookieConsent = () => {
         allowed: allowed,
         needsConsent,
         reject: () => {
-            setNeedsConsent(false);
-            setAllowed(false);
             Cookies.set(COOKIE_CONSENT_NAME, 'no', {
                 path: '/',
                 secure: true,
                 sameSite: 'strict',
                 expires: COOKIE_CONSENT_MAXAGE_DAYS,
             });
-            Cookies.remove('_ga', { path: '/', domain: document.domain });
-            Cookies.remove('_gid', { path: '/', domain: document.domain });
-            Cookies.remove('_gat', { path: '/', domain: document.domain });
+
+            if (window.gtag) {
+                window.gtag('consent', 'update', {
+                    analytics_storage: 'denied',
+                });
+            }
+
+            Cookies.remove('_ga', { path: '/', domain: location.hostname });
+            if (GA_ID) {
+                Cookies.remove(GA_ID.replace('G-', '_ga-'), {
+                    path: '/',
+                    domain: location.hostname,
+                });
+            }
+            Cookies.remove('_gid', { path: '/', domain: location.hostname });
+            Cookies.remove('_gat', { path: '/', domain: location.hostname });
             if (typeof window !== undefined) {
                 (window as any)[`ga-disable-${GA_ID}`] = true;
             }
+
+            setNeedsConsent(false);
+            setAllowed(false);
         },
         accept: () => {
-            setNeedsConsent(false);
-            setAllowed(true);
             Cookies.set(COOKIE_CONSENT_NAME, 'yes', {
                 path: '/',
                 secure: true,
                 sameSite: 'strict',
                 expires: COOKIE_CONSENT_MAXAGE_DAYS,
             });
+            if (window.gtag) {
+                window.gtag('consent', 'update', {
+                    analytics_storage: 'granted',
+                });
+            }
             if (typeof window !== undefined) {
                 (window as any)[`ga-disable-${GA_ID}`] = false;
             }
+
+            setNeedsConsent(false);
+            setAllowed(true);
         },
     };
 };
