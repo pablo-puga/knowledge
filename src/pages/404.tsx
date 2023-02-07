@@ -22,10 +22,11 @@ const _404Page = () => {
                         Check out the list of bits of knowledge that we have,
                         maybe you find something interesting!
                     </p>
-                    <Link href="/">
-                        <a className="text-lg md:text-xl lg:text-2xl underline text-theme-purple hover:text-theme-green transition-colors duration-200 font-medium">
-                            Home Page
-                        </a>
+                    <Link
+                        href="/"
+                        className="text-lg md:text-xl lg:text-2xl underline text-theme-purple hover:text-theme-green transition-colors duration-200 font-medium"
+                    >
+                        Home Page
                     </Link>
                 </section>
             </article>

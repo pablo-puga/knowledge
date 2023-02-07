@@ -14,8 +14,11 @@ const Tag = ({
             }
             style={{ backgroundColor: color }}
         >
-            <Link href={`/tag/${children}`}>
-                <a title={`List of posts of tag ${children}`}>{children}</a>
+            <Link
+                href={`/tag/${children}`}
+                title={`List of posts of tag ${children}`}
+            >
+                {children}
             </Link>
         </span>
     );

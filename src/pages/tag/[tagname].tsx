@@ -77,11 +77,12 @@ const PostByCategoryPage = ({
     tags,
     categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const title = `"${tagname}" posts`;
     return (
         <>
             <Head>
-                <title>&quot;{tagname}&quot; posts</title>
-                <meta property="og:title" content={`"${tagname}"`} />
+                <title>{title}</title>
+                <meta property="og:title" content={title} />
                 <meta
                     name="description"
                     content={`List of posts for the ${tagname} tag`}

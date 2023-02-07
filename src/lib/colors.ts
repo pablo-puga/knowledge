@@ -14,7 +14,6 @@ export const generateRandomTagColor = (tagname: string) => {
     const total = tagname
         .split('')
         .reduce((sum, char) => sum + char.charCodeAt(0), 0);
-    const module = total % 360;
-    const color = tinycolor({ h: module, s: 100, l: 0.8 });
+    const color = tinycolor({ h: total % 360, s: 100, l: 0.8 });
     return color.toHexString();
 };
